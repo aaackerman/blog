@@ -6,13 +6,9 @@ class Footer extends React.Component {
             <div id="footer">
                 <div className="inner">
                     <ul className="icons">
-                        <li><a href="#" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
-                        <li><a href="#" className="icon fa-github"><span className="label">Github</span></a></li>
-                        <li><a href="#" className="icon fa-dribbble"><span className="label">Dribbble</span></a></li>
-                        <li><a href="#" className="icon fa-envelope-o"><span className="label">Email</span></a></li>
-                    </ul>
-                    <ul className="copyright">
-                        <li>&copy; Gatsby Starter Strata</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        <li><a target="_blank" href="https://www.github.com/aaackerman" className="icon fa-github"><span className="label">Github</span></a></li>
+                        <li><a target="_blank" href="https://wwww.twitter.com/alexiconz" className="icon fa-twitter"><span className="label">Twitter</span></a></li>
+                        <li><a target="_blank" href="https://wwww.twitch.tv/alexiconz" className="icon fa-twitch"><span className="label">Twitch</span></a></li>
                     </ul>
                 </div>
             </div>
