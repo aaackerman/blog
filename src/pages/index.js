@@ -2,14 +2,14 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import PostCard from '../components/PostCard'
-import thumb01 from '../assets/images/thumbs/01.jpg'
-import thumb02 from '../assets/images/thumbs/02.jpg'
+import thumbManager from '../assets/images/thumbs/manager.jpg'
+import thumbCode from '../assets/images/thumbs/vscode.jpg'
 
 const posts = [
   {
     id: '1',
     path: '/engineering-manager-reading-list',
-    thumbnail: thumb01,
+    thumbnail: thumbManager,
     title: 'Engineering Manager Reading List',
     description:
       'Books, articles and more that have helped me with engineering management.',
@@ -18,7 +18,7 @@ const posts = [
   {
     id: '2',
     path: '/vs-code-tools',
-    thumbnail: thumb02,
+    thumbnail: thumbCode,
     title: 'VSCode Tools',
     description: 'A list of VS code tools that have helped me along the way.',
     date: '4.2.2020',

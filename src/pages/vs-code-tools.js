@@ -3,13 +3,13 @@ import Helmet from 'react-helmet'
 import { Link } from '@reach/router'
 import Layout from '../components/layout'
 
-const EngineeringManagerPost = () => (
+const VsCodePost = () => (
   <Layout>
     <Helmet>
-      <title>Engineering Manager Reading List</title>
+      <title>VS Code Tools</title>
       <meta
         name="description"
-        content="Books, articles and more that have helped me with engineering management."
+        content="A list of VS code tools that have helped me along the way."
       />
     </Helmet>
     <div id="main">
@@ -20,13 +20,13 @@ const EngineeringManagerPost = () => (
           </Link>
         </div>
         <header className="major">
-          <h2>Engineering Manager Reading List</h2>
+          <h2>VS Code Tools</h2>
         </header>
-        <h3>Books</h3>
-        <h3>Articles</h3>
+        <h3>Plugins</h3>
+        <h3>Fonts</h3>
       </section>
     </div>
   </Layout>
 )
 
-export default EngineeringManagerPost
+export default VsCodePost
