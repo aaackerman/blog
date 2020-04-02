@@ -1,183 +1,137 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
 import Layout from '../components/layout'
-// import Lightbox from 'react-images'
-import Gallery from '../components/Gallery'
-
+import PostCard from '../components/PostCard'
 import thumb01 from '../assets/images/thumbs/01.jpg'
 import thumb02 from '../assets/images/thumbs/02.jpg'
-import thumb03 from '../assets/images/thumbs/03.jpg'
-import thumb04 from '../assets/images/thumbs/04.jpg'
-import thumb05 from '../assets/images/thumbs/05.jpg'
-import thumb06 from '../assets/images/thumbs/06.jpg'
 
-import full01 from '../assets/images/fulls/01.jpg'
-import full02 from '../assets/images/fulls/02.jpg'
-import full03 from '../assets/images/fulls/03.jpg'
-import full04 from '../assets/images/fulls/04.jpg'
-import full05 from '../assets/images/fulls/05.jpg'
-import full06 from '../assets/images/fulls/06.jpg'
-
-const DEFAULT_IMAGES = [
+const posts = [
   {
     id: '1',
-    source: full01,
+    path: '/engineering-manager-reading-list',
     thumbnail: thumb01,
-    caption: 'Photo 1',
-    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+    title: 'Engineering Manager Reading List',
+    description:
+      'Books, articles and more that have helped me with engineering management.',
+    date: '4.2.2020',
   },
   {
     id: '2',
-    source: full02,
+    path: '/vs-code-tools',
     thumbnail: thumb02,
-    caption: 'Photo 2',
-    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
-  },
-  {
-    id: '3',
-    source: full03,
-    thumbnail: thumb03,
-    caption: 'Photo 3',
-    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
-  },
-  {
-    id: '4',
-    source: full04,
-    thumbnail: thumb04,
-    caption: 'Photo 4',
-    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
-  },
-  {
-    id: '5',
-    source: full05,
-    thumbnail: thumb05,
-    caption: 'Photo 5',
-    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
-  },
-  {
-    id: '6',
-    source: full06,
-    thumbnail: thumb06,
-    caption: 'Photo 6',
-    description: 'Lorem ipsum dolor sit amet nisl sed nullam feugiat.',
+    title: 'VSCode Tools',
+    description: 'A list of VS code tools that have helped me along the way.',
+    date: '4.2.2020',
   },
 ]
 
-class HomeIndex extends React.Component {
-  render() {
-    const siteTitle = 'Gatsby Starter - Strata'
-    const siteDescription = 'Site description'
+const PostsList = () => posts.map((props) => <PostCard {...props} />)
 
-    return (
-      <Layout>
-        <Helmet>
-          <title>{siteTitle}</title>
-          <meta name="description" content={siteDescription} />
-        </Helmet>
+const Index = () => {
+  const siteTitle = 'Gatsby Starter - Strata'
+  const siteDescription = 'Site description'
 
-        <div id="main">
-          <section id="one">
-            <header className="major">
-              <h2>About</h2>
-            </header>
-            <p>
-              I'm an NYC based web developer and engineering manager who nerds
-              out crafting teams and high-quality software that solves problems
-              for people. I build test-driven Ruby on Rails web applications
-              with frontend JavaScript frameworks like React.
-            </p>
-            <p>
-              Ruby is my expertise and I'm actively improving my JavaScript
-              skills. My recent posts will include learnings in this journey.
-            </p>
-            <p>
-              Life is more than work. I also stream video games every Sunday on{' '}
-              <a href="http://twitch.tv/alexiconz" target="_blank">
-                Twitch
-              </a>{' '}
-              and can be found at the gym 5-6 times a week. Let's talk gaming
-              and fitness too.
-            </p>
-          </section>
+  return (
+    <Layout>
+      <Helmet>
+        <title>{siteTitle}</title>
+        <meta name="description" content={siteDescription} />
+      </Helmet>
 
-          <section id="two">
-            <h2>Recent Posts</h2>
-            <Gallery
-              images={DEFAULT_IMAGES.map(
-                ({ id, source, thumbnail, caption, description }) => ({
-                  source,
-                  thumbnail,
-                  caption,
-                  description,
-                })
-              )}
-            />
-            <ul className="actions">
-              <li>
-                <a href="#" className="button">
-                  Full Portfolio
-                </a>
-              </li>
-            </ul>
-          </section>
+      <div id="main">
+        <section id="one">
+          <header className="major">
+            <h2>About</h2>
+          </header>
+          <p>
+            I'm an NYC based web developer and engineering manager who nerds out
+            crafting teams and high-quality software that solves problems for
+            people. I build test-driven Ruby on Rails web applications with
+            frontend JavaScript frameworks like React.
+          </p>
+          <p>
+            Ruby is my expertise and I'm actively improving my JavaScript
+            skills. My recent posts will include learnings in this journey.
+          </p>
+          <p>
+            Life is more than work. I also stream video games every Sunday on{' '}
+            <a href="http://twitch.tv/alexiconz" target="_blank">
+              Twitch
+            </a>{' '}
+            and can be found at the gym 5-6 times a week. Let's talk gaming and
+            fitness too.
+          </p>
+        </section>
 
-          <section id="three">
-            <h2>Get in touch</h2>
-            <div className="row">
-              <div className="8u 12u$(small)">
-                <form method="post" action="#">
-                  <div className="row uniform 50%">
-                    <div className="6u 12u$(xsmall)">
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Name"
-                      />
-                    </div>
-                    <div className="6u 12u$(xsmall)">
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div className="12u">
-                      <textarea
-                        name="message"
-                        id="message"
-                        placeholder="Message"
-                        rows="4"
-                      ></textarea>
-                    </div>
+        <section id="two">
+          <h2>Recent Posts</h2>
+          <div className="row">
+            <PostsList />
+          </div>
+          {/* <ul className="actions">
+            <li>
+              <a href="/posts" className="button">
+                View older posts
+              </a>
+            </li>
+          </ul> */}
+        </section>
+
+        <section id="three">
+          <h2>Get in touch</h2>
+          <div className="row">
+            <div className="8u 12u$(small)">
+              <form method="post" action="#">
+                <div className="row uniform 50%">
+                  <div className="6u 12u$(xsmall)">
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Name"
+                    />
                   </div>
-                </form>
-                <ul className="actions">
-                  <li>
-                    <input type="submit" value="Send Message" />
-                  </li>
-                </ul>
-              </div>
-              <div className="4u 12u$(small)">
-                <ul className="labeled-icons">
-                  <li>
-                    <h3 className="icon fa-linkedin">
-                      <span className="label">Add me on LinkedIn</span>
-                    </h3>
-                    <a href="http://linkedin.com/in/aaackerman" target="_blank">
-                      /in/aaackerman
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                  <div className="6u 12u$(xsmall)">
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Email"
+                    />
+                  </div>
+                  <div className="12u">
+                    <textarea
+                      name="message"
+                      id="message"
+                      placeholder="Message"
+                      rows="4"
+                    />
+                  </div>
+                </div>
+              </form>
+              <ul className="actions">
+                <li>
+                  <input type="submit" value="Send Message" />
+                </li>
+              </ul>
             </div>
-          </section>
-        </div>
-      </Layout>
-    )
-  }
+            <div className="4u 12u$(small)">
+              <ul className="labeled-icons">
+                <li>
+                  <h3 className="icon fa-linkedin">
+                    <span className="label">Add me on LinkedIn</span>
+                  </h3>
+                  <a href="http://linkedin.com/in/aaackerman" target="_blank">
+                    /in/aaackerman
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </Layout>
+  )
 }
 
-export default HomeIndex
+export default Index
