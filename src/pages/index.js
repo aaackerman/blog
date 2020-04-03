@@ -1,9 +1,10 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import PostCard from '../components/PostCard'
-import thumbManager from '../assets/images/thumbs/manager.jpg'
-import thumbCode from '../assets/images/thumbs/vscode.jpg'
+import React from 'react';
+import Helmet from 'react-helmet';
+import Layout from '../components/layout';
+import PostCard from '../components/PostCard';
+import ContactForm from '../components/ContactForm';
+import thumbManager from '../assets/images/thumbs/manager.jpg';
+import thumbCode from '../assets/images/thumbs/vscode.jpg';
 
 const posts = [
   {
@@ -13,7 +14,7 @@ const posts = [
     title: 'Engineering Manager Reading List',
     description:
       'Books, articles and more that have helped me with engineering management.',
-    date: '4.2.2020',
+    date: '4.2.2020'
   },
   {
     id: '2',
@@ -21,16 +22,16 @@ const posts = [
     thumbnail: thumbCode,
     title: 'VS Code Tools',
     description: 'A list of VS code tools that have helped me along the way.',
-    date: '4.2.2020',
-  },
-]
+    date: '4.2.2020'
+  }
+];
 
-const PostsList = () => posts.map((props) => <PostCard {...props} />)
+const PostsList = () => posts.map((props) => <PostCard {...props} />);
 
 const Index = () => {
-  const siteTitle = 'Alex Ackerman'
+  const siteTitle = 'Alex Ackerman';
   const siteDescription =
-    'Alex is an NYC based web developer and engineering manager.'
+    'Alex is an NYC based web developer and engineering manager.';
 
   return (
     <Layout>
@@ -80,64 +81,11 @@ const Index = () => {
 
         <section id="three">
           <h2>Get in touch</h2>
-          <div className="row">
-            <div className="8u 12u$(small)">
-              <form
-                name="contact"
-                method="post"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-              >
-                <div className="row uniform 50%">
-                  <div className="6u 12u$(xsmall)">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div className="6u 12u$(xsmall)">
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="12u">
-                    <textarea
-                      name="message"
-                      id="message"
-                      placeholder="Message"
-                      rows="4"
-                    />
-                  </div>
-                </div>
-              </form>
-              <ul className="actions">
-                <li>
-                  <input type="submit" value="Send Message" />
-                </li>
-              </ul>
-            </div>
-            <div className="4u 12u$(small)">
-              <ul className="labeled-icons">
-                <li>
-                  <h3 className="icon fa-linkedin">
-                    <span className="label">Add me on LinkedIn</span>
-                  </h3>
-                  <a href="http://linkedin.com/in/aaackerman" target="_blank">
-                    /in/aaackerman
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <ContactForm />
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

@@ -1,18 +1,18 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
-import { Link } from '@reach/router'
-import Layout from '../components/layout'
-import settings from '../assets/code/vs-code-settings'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Link } from '@reach/router';
+import Layout from '../components/layout';
+import settings from '../assets/code/vs-code-settings';
 
 const SettingsComponent = () => {
   return (
     <SyntaxHighlighter language="json" style={atomDark}>
       {JSON.stringify(settings, null, 2)}
     </SyntaxHighlighter>
-  )
-}
+  );
+};
 
 const VsCodePost = () => (
   <Layout>
@@ -167,6 +167,6 @@ const VsCodePost = () => (
       </section>
     </div>
   </Layout>
-)
+);
 
-export default VsCodePost
+export default VsCodePost;

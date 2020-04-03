@@ -18,7 +18,7 @@
     large: '(max-width: 1280px)',
     medium: '(max-width: 980px)',
     small: '(max-width: 736px)',
-    xsmall: '(max-width: 480px)',
+    xsmall: '(max-width: 480px)'
   )
 );
 
@@ -27,22 +27,22 @@
     reset: 'full',
     boxModel: 'border',
     grid: (
-      gutters: 2.5em,
+      gutters: 2.5em
     ),
     conditionals: true,
     containers: true,
     breakpoints: (
       large: (
         grid: (
-          gutters: 2em,
-        ),
+          gutters: 2em
+        )
       ),
       small: (
         grid: (
-          gutters: 1.5em,
-        ),
-      ),
-    ),
+          gutters: 1.5em
+        )
+      )
+    )
   )
 );
 
@@ -623,6 +623,7 @@ ul {
     cursor: default;
     list-style: none;
     padding-left: 0;
+    margin-top: 15px;
 
     li {
       display: inline-block;
@@ -804,6 +805,7 @@ table {
 
 /* Button */
 
+button[type='submit'],
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
