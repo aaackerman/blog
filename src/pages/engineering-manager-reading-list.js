@@ -39,17 +39,20 @@ const EngineeringManagerPost = () => (
         <div>
           <h2>Learning Resources</h2>
           <p>
+            <i>A few online tools to help your coworkers grow their skills.</i>
+          </p>
+          <li>
             <a
               href="https://frontendmasters.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Frontend Masters
+              Frontend Masters:
             </a>{' '}
-            is great for going in-depth in modern JavaScript and front-end
+            great for going in-depth in modern JavaScript and front-end
             engineering technologies.
-          </p>
-          <p>
+          </li>
+          <li>
             <a
               href="https://frontendmasters.com/"
               target="_blank"
@@ -57,7 +60,8 @@ const EngineeringManagerPost = () => (
             >
               Pluralsight
             </a>{' '}
-          </p>
+            wider array of topics .
+          </li>
         </div>
       </section>
     </div>

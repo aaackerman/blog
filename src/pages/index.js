@@ -19,7 +19,7 @@ const posts = [
     id: '2',
     path: '/vs-code-tools',
     thumbnail: thumbCode,
-    title: 'VSCode Tools',
+    title: 'VS Code Tools',
     description: 'A list of VS code tools that have helped me along the way.',
     date: '4.2.2020',
   },
@@ -28,8 +28,9 @@ const posts = [
 const PostsList = () => posts.map((props) => <PostCard {...props} />)
 
 const Index = () => {
-  const siteTitle = 'Gatsby Starter - Strata'
-  const siteDescription = 'Site description'
+  const siteTitle = 'Alex Ackerman'
+  const siteDescription =
+    'Alex is an NYC based web developer and engineering manager.'
 
   return (
     <Layout>
