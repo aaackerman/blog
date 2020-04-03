@@ -20,13 +20,12 @@ const settings = {
     textMateRules: [
       {
         scope: [
-          //following will be in italic (=FlottFlott)
           'comment',
-          'entity.name.type.class', //class names
-          'keyword', //import, export, return…
-          'constant', //String, Number, Boolean…, this, super
-          'storage.modifier', //static keyword
-          'storage.type.class.js' //class keyword
+          'entity.name.type.class',
+          'keyword',
+          'constant',
+          'storage.modifier',
+          'storage.type.class.js'
         ],
         settings: {
           fontStyle: 'italic'
@@ -34,7 +33,6 @@ const settings = {
       },
       {
         scope: [
-          //following will be excluded from italics (VSCode has some defaults for italics)
           'invalid',
           'keyword.operator',
           'constant.numeric.css',

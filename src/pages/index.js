@@ -46,22 +46,26 @@ const Index = () => {
             <h2>About</h2>
           </header>
           <p>
-            I'm an NYC based web developer and engineering manager who nerds out
-            crafting teams and high-quality software that solves problems for
-            people. I build test-driven Ruby on Rails web applications with
-            frontend JavaScript frameworks like React.
+            I&apos;m an NYC based web developer and engineering manager who
+            nerds out crafting teams and high-quality software that solves
+            problems for people. I build test-driven Ruby on Rails web
+            applications with frontend JavaScript frameworks like React.
           </p>
           <p>
-            Ruby is my expertise and I'm actively improving my JavaScript
+            Ruby is my expertise and I&apos;m actively improving my JavaScript
             skills. My recent posts will include learnings in this journey.
           </p>
           <p>
             Life is more than work. I also stream video games every Sunday on{' '}
-            <a href="http://twitch.tv/alexiconz" target="_blank">
+            <a
+              href="http://twitch.tv/alexiconz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Twitch
             </a>{' '}
-            and can be found at the gym 5-6 times a week. Let's talk gaming and
-            fitness too.
+            and can be found at the gym 5-6 times a week. Let&apos;s talk gaming
+            and fitness too.
           </p>
         </section>
 
