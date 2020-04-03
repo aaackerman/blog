@@ -1,7 +1,7 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Link } from '@reach/router'
-import Layout from '../components/layout'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Link } from '@reach/router';
+import Layout from '../components/layout';
 
 const EngineeringManagerPost = () => (
   <Layout>
@@ -25,14 +25,40 @@ const EngineeringManagerPost = () => (
         <div>
           <h2>Books</h2>
           <ul>
-            <li></li>
+            <li>
+              <a
+                href="https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth/dp/1491973897"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                The Manager&apos;s Path: A Guide for Tech Leaders Navigating
+                Growth and Change
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.amazon.com/Making-Manager-What-Everyone-Looks/dp/0735219567"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                The Making of a Manager: What to Do When Everyone Looks to You
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
           <h2>Articles</h2>
           <ul>
-            <li></li>
+            <li>
+              <a
+                href="https://larahogan.me/blog/benefits-offering-challenges/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                How to Offer Challenges to your Teammates
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -66,6 +92,6 @@ const EngineeringManagerPost = () => (
       </section>
     </div>
   </Layout>
-)
+);
 
-export default EngineeringManagerPost
+export default EngineeringManagerPost;
