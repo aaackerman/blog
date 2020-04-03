@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
+import { Form, Field } from 'react-final-form';
+
+const FORM_NAME = 'contact';
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const clearForm = () => {
-    setName('');
-    setEmail('');
-    setMessage('');
-  };
+  const [formSubmitMessage, setFormSubmitMessage] = useState('');
 
   const encode = (data) =>
     Object.keys(data)
@@ -18,71 +13,93 @@ const ContactForm = () => {
       )
       .join('&');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const formName = form.getAttribute('name');
-
-    fetch('/', {
+  const onSubmit = (formValues) => {
+    return fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': formName,
-        name,
-        email,
-        message
+        'form-name': FORM_NAME,
+        ...formValues
       })
-    }).then(clearForm);
+    })
+      .then(() => {
+        setFormSubmitMessage("Thanks for your message! I'll be in touch.");
+      })
+      .catch(() => {
+        setFormSubmitMessage(
+          'Oops! Somethign went wrong. Try reaching out on LinkedIn.'
+        );
+      });
   };
 
   return (
     <div className="row">
       <div className="8u 12u$(small)">
-        <form
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-        >
-          <input type="hidden" name="form-name" value="contact" />
+        <Form
+          onSubmit={onSubmit}
+          render={({ handleSubmit, form }) => (
+            <div>
+              <form
+                name={FORM_NAME}
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={async (event) => {
+                  await handleSubmit(event);
+                  form.reset();
+                }}
+              >
+                <Field
+                  type="hidden"
+                  name="form-name"
+                  value="contact"
+                  component="input"
+                />
 
-          <div className="row uniform 50%">
-            <div className="6u 12u$(xsmall)">
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Name"
-                onChange={(e) => setName(e.target.value)}
-              />
+                <div className="row uniform 50%">
+                  <div className="6u 12u$(xsmall)">
+                    <Field
+                      type="text"
+                      name="name"
+                      id="name"
+                      placeholder="Name"
+                      component="input"
+                      required
+                    />
+                  </div>
+                  <div className="6u 12u$(xsmall)">
+                    <Field
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Email"
+                      component="input"
+                      required
+                    />
+                  </div>
+                  <div className="12u">
+                    <Field
+                      name="message"
+                      id="message"
+                      component="textarea"
+                      placeholder="Message"
+                      rows="4"
+                      required
+                    />
+                  </div>
+                </div>
+                <ul className="actions">
+                  <li>
+                    <button type="submit">Send message</button>
+                  </li>
+                  <li>
+                    <p className="form-message">{formSubmitMessage}</p>
+                  </li>
+                </ul>
+              </form>
             </div>
-            <div className="6u 12u$(xsmall)">
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="12u">
-              <textarea
-                name="message"
-                id="message"
-                placeholder="Message"
-                rows="4"
-                onChange={(e) => setMessage(e.target.value)}
-              />
-            </div>
-          </div>
-          <ul className="actions">
-            <li>
-              <button type="submit">Send message</button>
-            </li>
-          </ul>
-        </form>
+          )}
+        />
       </div>
       <div className="4u 12u$(small)">
         <ul className="labeled-icons">
@@ -90,7 +107,11 @@ const ContactForm = () => {
             <h3 className="icon fa-linkedin">
               <span className="label">Add me on LinkedIn</span>
             </h3>
-            <a href="http://linkedin.com/in/aaackerman" target="_blank">
+            <a
+              href="http://linkedin.com/in/aaackerman"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               /in/aaackerman
             </a>
           </li>
