@@ -82,7 +82,12 @@ const Index = () => {
           <h2>Get in touch</h2>
           <div className="row">
             <div className="8u 12u$(small)">
-              <form method="post" action="#">
+              <form
+                name="contact"
+                method="post"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
                 <div className="row uniform 50%">
                   <div className="6u 12u$(xsmall)">
                     <input
