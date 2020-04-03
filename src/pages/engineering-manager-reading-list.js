@@ -20,10 +20,45 @@ const EngineeringManagerPost = () => (
           </Link>
         </div>
         <header className="major">
-          <h2>Engineering Manager Reading List</h2>
+          <h1>Engineering Manager Reading List</h1>
         </header>
-        <h3>Books</h3>
-        <h3>Articles</h3>
+        <div>
+          <h2>Books</h2>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Articles</h2>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Learning Resources</h2>
+          <p>
+            <a
+              href="https://frontendmasters.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Frontend Masters
+            </a>{' '}
+            is great for going in-depth in modern JavaScript and front-end
+            engineering technologies.
+          </p>
+          <p>
+            <a
+              href="https://frontendmasters.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pluralsight
+            </a>{' '}
+          </p>
+        </div>
       </section>
     </div>
   </Layout>
