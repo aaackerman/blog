@@ -1,12 +1,14 @@
-import React from 'react'
-import '../assets/scss/main.scss'
-import Header from './Header'
+import React, { memo } from 'react';
+import '../assets/scss/main.scss';
+import Header from './Header';
+
+const MemoizedHeader = memo(() => <Header />);
 
 const Template = ({ children }) => (
   <div>
-    <Header />
+    <MemoizedHeader />
     {children}
   </div>
-)
+);
 
-export default Template
+export default Template;
