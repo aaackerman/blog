@@ -9,9 +9,9 @@ import thumbCode from '../assets/images/thumbs/vscode.jpg';
 const posts = [
   {
     id: '1',
-    path: '/engineering-manager-reading-list',
+    path: '/engineering-learning-list',
     thumbnail: thumbManager,
-    title: 'Engineering Manager Reading List',
+    title: 'Engineering Learning List',
     description:
       'Books, articles and more that have helped me with engineering management.',
     date: '4.2.2020'
