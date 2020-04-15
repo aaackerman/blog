@@ -2,7 +2,6 @@ const settings = {
   'workbench.colorTheme': 'Solarized Dark',
   'javascript.format.insertSpaceAfterConstructor': true,
   'javascript.format.insertSpaceBeforeFunctionParenthesis': true,
-  'prettier.requireConfig': true,
   'emmet.triggerExpansionOnTab': true,
   'emmet.includeLanguages': {
     javascript: 'javascriptreact'
@@ -21,11 +20,16 @@ const settings = {
       {
         scope: [
           'comment',
+          'constant.language',
           'entity.name.type.class',
           'keyword',
           'constant',
+          'variable.language',
+          'storage.type',
           'storage.modifier',
-          'storage.type.class.js'
+          'storage.type.class.js',
+          'storage.type.enum',
+          'storage.type.interface'
         ],
         settings: {
           fontStyle: 'italic'
@@ -50,7 +54,8 @@ const settings = {
   'workbench.iconTheme': 'material-icon-theme',
   'editor.minimap.enabled': false,
   'workbench.editor.enablePreviewFromQuickOpen': false,
-  'explorer.openEditors.visible': 0
+  'explorer.openEditors.visible': 0,
+  'prettier.trailingComma': 'none'
 };
 
 export default settings;
